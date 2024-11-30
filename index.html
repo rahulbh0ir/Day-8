@@ -21,6 +21,10 @@
         ctx.lineCap = "round";
         ctx.lineWidth = 15;
 
+        //To change background 
+        ctx.fillStyle = "black";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
         let move = false;
         let lastX = 0;
         let lastY = 0;
@@ -46,7 +50,7 @@
             }
 
             
-            if(ctx.lineWidth >= 60 || ctx.lineWidth <= 10){
+            if(ctx.lineWidth >= 70 || ctx.lineWidth <= 5){
                 flag = !flag;
             }
 
