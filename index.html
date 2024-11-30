@@ -8,7 +8,7 @@
 </head>
 <body>
     
-    <canvas class="draw" width="100" height="100"></canvas>
+    <canvas class="draw" width="100" height=""></canvas>
 
     <script>
 
@@ -44,11 +44,11 @@
         canvas.addEventListener("mouseup", ()=> move = false);
         canvas.addEventListener("mouseout", ()=> move = false);
 
-        canvas.addEventListener("touchmove", ()=>{
+        canvas.addEventListener("touchmove", draw);
+        canvas.addEventListener("touchstart", ()=>{
             move = true;
-            [lastX, lastY] = [e.offsetX, e.offsetY];
-        })
-        canvas.addEventListener("touchstart", draw )
+            [lastX, lastY] = [e.offsetX, e.offsetY]
+        }); 
         canvas.addEventListener("touchend", ()=> move = false); 
         canvas.addEventListener("touchcancel", ()=> move= false); 
 
