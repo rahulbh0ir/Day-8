@@ -35,13 +35,23 @@
 
         }
 
-        canvas.addEventListener("mousemove" , draw);
         canvas.addEventListener("mousedown", (e)=> {
-                                    move = true;
-                                    [lastX, lastY] = [e.offsetX, e.offsetY]
-                                });
+            move = true;
+            [lastX, lastY] = [e.offsetX, e.offsetY]
+        });
+
+        canvas.addEventListener("mousemove" , draw);
         canvas.addEventListener("mouseup", ()=> move = false);
         canvas.addEventListener("mouseout", ()=> move = false);
+
+        canvas.addEventListener("touchmove", draw);
+        canvas.addEventListener("touchstart", ()=>{
+            move = true;
+            [lastX, lastY] = [e.offsetX, e.offsetY]
+        }); 
+        canvas.addEventListener("touchend", ()=> move = false); 
+        canvas.addEventListener("touchcancel", ()=> move= false); 
+
 
 
     </script>
