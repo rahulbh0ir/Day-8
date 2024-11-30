@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paint</title>
+    <link rel="icon" href="https://fav.farm/%F0%9F%8E%A8">
+</head>
+<body>
+    
+    <canvas class="draw" width="800" height="800"></canvas>
+
+    <script>
+
+        const canvas = document.querySelector(".draw");
+        const ctx = canvas.getContext("2d");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        ctx.strokeStyle = "#BADASS";
+        ctx.lineJoin = "round";
+        ctx.lineCap ="round";
+
+        let mouseMove = false;
+
+
+        function draw(e){
+            if(!mouseMove) return;
+            console.log(e)
+        }
+
+        canvas.addEventListener("mousemove", draw)
+        canvas.addEventListener("mousedown", () => {mouseMove = true})
+        canvas.addEventListener("mouseup", () => mouseMove = false)
+
+    </script>
+</body>
+</html>
