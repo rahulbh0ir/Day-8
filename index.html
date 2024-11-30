@@ -44,11 +44,11 @@
         canvas.addEventListener("mouseup", ()=> move = false);
         canvas.addEventListener("mouseout", ()=> move = false);
 
-        canvas.addEventListener("touchmove", draw);
-        canvas.addEventListener("touchstart", ()=>{
+        canvas.addEventListener("touchmove", ()=>{
             move = true;
-            [lastX, lastY] = [e.offsetX, e.offsetY]
-        }); 
+            [lastX, lastY] = [e.offsetX, e.offsetY];
+        })
+        canvas.addEventListener("touchstart", draw )
         canvas.addEventListener("touchend", ()=> move = false); 
         canvas.addEventListener("touchcancel", ()=> move= false); 
 
